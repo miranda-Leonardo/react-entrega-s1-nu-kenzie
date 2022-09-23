@@ -1,0 +1,98 @@
+:root {
+  --color-primary: #fd377e;
+  --color-primary-2: #e34981;
+
+  --color-secundary: #03b898;
+
+  --grey-4: #212529;
+  --grey-3: #868e96;
+  --grey-2: #e9ecef;
+  --grey-1: #f8f9fa;
+}
+
+.title-1 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.title-2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.title-3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.title-4 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.headline {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.body {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.buttonOne {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+}
+
+.buttonOne:hover {
+  background-color: var(--color-primary-2);
+  color: #f8f9fa;
+}
+
+.buttonDisableOne {
+  background-color: var(--grey-2);
+  color: var(--grey-3);
+}
+
+.buttonDisableTwo {
+  background-color: var(--grey-3);
+  color: var(--grey-1);
+}
+
+.buttonDisableThree {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.buttonDelete {
+  background-color: var(--grey-2);
+}
+
+.buttonDelete:hover {
+  background-color: var(--grey-3);
+}
+
+input {
+  background-color: var(--grey-1);
+  border: 2px solid var(--grey-1);
+  border-radius: 8px;
+  color: var(--grey-3);
+}
+
+input:hover {
+  border: 2px solid var(--grey-4);
+  color: var(--grey-4);
+}
+
+.cardDefault {
+  background-color: var(--grey-1);
+  border-radius: 4px;
+}
+
+.cardDefault:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 42px -12px rgba(0, 0, 0, 0.25);
+}
