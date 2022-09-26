@@ -1,0 +1,66 @@
+body div {
+  height: auto;
+}
+
+.App .container {
+  width: 100%;
+}
+
+.container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container > section {
+  display: flex;
+  flex-direction: row;
+}
+
+.container > section > form {
+  width: 50%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.labelTarefa,
+.h2Title,
+.labelPreco,
+.labelSelect {
+  color: #ffffff;
+}
+
+#tarefa,
+#preco {
+  padding: 10px;
+  margin: 10px;
+}
+
+.divValor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.divValor > div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container > section > div {
+  width: 50%;
+  min-height: 300px;
+}
+
+#tipoDeValor {
+  padding: 10px;
+  margin: 10px;
+}

@@ -3,6 +3,7 @@ import "./style.css";
 import "./App.css";
 import { useState } from "react";
 import { WelcomePage } from "./Componentes/WelcomePage";
+import { HomePage } from "./Componentes/HomePage";
 
 function App() {
   const [isWelcomePage, setIsWelcomePage] = useState(true);
@@ -12,7 +13,7 @@ function App() {
       {isWelcomePage ? (
         <WelcomePage setIsWelcomePage={setIsWelcomePage} />
       ) : (
-        <h1>Olá</h1>
+        <HomePage setIsWelcomePage={setIsWelcomePage} />
       )}
     </div>
   );
