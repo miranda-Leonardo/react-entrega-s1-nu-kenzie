@@ -1,6 +1,4 @@
-import './style.css'
-
-export const WelcomePage = ({setIsWelcomePage}) => {
+export const WelcomePage = ({ setIsWelcomePage }) => {
   return (
     <>
       <div>
@@ -10,7 +8,11 @@ export const WelcomePage = ({setIsWelcomePage}) => {
         <p className="title-1">Centralize o controle das suas finaças</p>
         <p className="headline">de forma rápida e segura</p>
         <div className="containerButton">
-          <button type="button" className="buttonOne" onClick={() => setIsWelcomePage(false)}>
+          <button
+            type="button"
+            className="buttonOne"
+            onClick={() => setIsWelcomePage(false)}
+          >
             Iniciar
           </button>
         </div>
