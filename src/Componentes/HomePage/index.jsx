@@ -14,36 +14,18 @@ export const HomePage = ({ setIsWelcomePage }) => {
 
     setListTransactions([
       ...listTransactions,
-      { description: tarefa, type: tipo, value: valor },
+      { description: tarefa, type: tipo, value: Number(valor) },
     ]);
     setTarefa("");
     setValor("");
     setTipo("");
   };
 
-  const renderList = () => {
-    listTransactions.map((item, index) => {
-      const { description, type, value } = item;
-      return (
-        <li key={index}>
-          <div>
-            <h3>{description}</h3>
-            <p>{type}</p>
-          </div>
-          <div>
-            <p>{`R$ ${value}`}</p>
-            <button onClick={() => removeItem(description)}>Lixeira</button>
-          </div>
-        </li>
-      );
-    });
-
-    const removeItem = (itemRemove) => {
-      const newList = listTransactions.filter(
-        (item) => item.description !== itemRemove
-      );
-      setListTransactions(newList);
-    };
+  const removeItem = (itemRemove) => {
+    const newList = listTransactions.filter(
+      (item) => item.description !== itemRemove
+    );
+    setListTransactions(newList);
   };
 
   return (
@@ -58,52 +40,68 @@ export const HomePage = ({ setIsWelcomePage }) => {
           </button>
         </header>
         <section>
-          <form onSubmit={handleSubmit}>
-            <label className="headline labelTarefa" htmlFor="tarefa">
-              Descrição
-            </label>
-            <input
-              type="text"
-              className="headline"
-              id="tarefa"
-              placeholder="Digite sua descrição"
-              value={tarefa}
-              onChange={(event) => setTarefa(event.target.value)}
-            />
-            <p>Ex: Compra de roupas</p>
-            <div className="divValor">
-              <div>
-                <label htmlFor="preco" className="labelPreco">
-                  Preço
-                </label>
-                <input
-                  type="text"
-                  className="headline"
-                  id="preco"
-                  placeholder="1"
-                  value={valor}
-                  onChange={(event) => setValor(event.target.value)}
-                />
+          <div>
+            <form onSubmit={handleSubmit}>
+              <label className="headline labelTarefa" htmlFor="tarefa">
+                Descrição
+              </label>
+              <input
+                type="text"
+                className="headline"
+                id="tarefa"
+                placeholder="Digite sua descrição"
+                value={tarefa}
+                onChange={(event) => setTarefa(event.target.value)}
+              />
+              <p>Ex: Compra de roupas</p>
+              <div className="divValor">
+                <div>
+                  <label htmlFor="preco" className="labelPreco">
+                    Preço
+                  </label>
+                  <input
+                    type="text"
+                    className="headline"
+                    id="preco"
+                    placeholder="1"
+                    value={valor}
+                    onChange={(event) => setValor(event.target.value)}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="tipoDeValor" className="headline labelSelect">
+                    Tipo de Valor
+                  </label>
+                  <select
+                    className="inputOne headline"
+                    id="tipoDeValor"
+                    value={tipo}
+                    onChange={(event) => setTipo(event.target.value)}
+                  >
+                    <option value="entrada">Entrada</option>
+                    <option value="despesa">Despesa</option>
+                  </select>
+                </div>
               </div>
-              <div>
-                <label htmlFor="tipoDeValor" className="headline labelSelect">
-                  Tipo de Valor
-                </label>
-                <select
-                  className="inputOne headline"
-                  id="tipoDeValor"
-                  value={tipo}
-                  onChange={(event) => setTipo(event.target.value)}
-                >
-                  <option value="Entrada">Entrada</option>
-                  <option value="Despesas">Despesas</option>
-                </select>
+              <button className="buttonOne" type="submit">
+                Inserir valor
+              </button>
+            </form>
+            <div>
+              <div className="priceTotal">
+                <h1 className="title-3">Valor total:</h1>
+                <p>
+                  {`$ 
+                  ${listTransactions.reduce(
+                    (previous, current) => previous + current.value,
+                    0
+                  )}
+                  `}
+                </p>
               </div>
+              <p>O valor se refere ao saldo</p>
             </div>
-            <button className="buttonOne" type="submit">
-              Inserir valor
-            </button>
-          </form>
+          </div>
           <div>
             <section>
               <h2 className="title-3 h2Title">Resumo Financeiro</h2>
@@ -113,7 +111,23 @@ export const HomePage = ({ setIsWelcomePage }) => {
                 <button className="buttonDisableOne">Despesas</button>
               </div>
             </section>
-            <ul>{renderList()}</ul>
+            <ul>
+              {listTransactions.map((item, index) => {
+                const { description, type, value } = item;
+                return (
+                  <li key={index} className="card">
+                    <div>
+                      <h3>{description}</h3>
+                      <p>{type}</p>
+                    </div>
+                    <p>{`R$ ${value}`}</p>
+                    <button onClick={() => removeItem(description)}>
+                      <img src="../../Pictures/lixeira.png" alt="Lixeira" />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </section>
       </div>

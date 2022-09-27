@@ -18,7 +18,7 @@ export const WelcomePage = ({ setIsWelcomePage }) => {
         </div>
       </div>
       <img
-        src="./Pictures/apresentation.png"
+        src="../../Pictures/apresentation.png"
         alt="Foto de apresentação da página web."
       />
     </>

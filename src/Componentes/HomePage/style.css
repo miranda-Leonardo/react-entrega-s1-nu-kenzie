@@ -64,3 +64,36 @@ body div {
   padding: 10px;
   margin: 10px;
 }
+
+section form {
+  padding: 0 10px;
+}
+
+section form > button {
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}
+
+.card h3 {
+  color: #ffffff;
+}
+
+.card img {
+  color: #000;
+}
+
+.card div,
+.card > p,
+.card button {
+  width: 33%;
+}
+
+.priceTotal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
