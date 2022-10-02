@@ -1,6 +1,8 @@
+import styles from "../styles.module.css";
+
 export const WelcomePage = ({ setIsWelcomePage }) => {
   return (
-    <>
+    <div className={styles.container}>
       <div>
         <h1 className="title-1">
           <span>Nu</span> Kenzie
@@ -21,6 +23,6 @@ export const WelcomePage = ({ setIsWelcomePage }) => {
         src="../../Pictures/apresentation.png"
         alt="Foto de apresentação da página web."
       />
-    </>
+    </div>
   );
 };

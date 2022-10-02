@@ -9,13 +9,13 @@ function App() {
   const [isWelcomePage, setIsWelcomePage] = useState(true);
 
   return (
-    <div className="App">
+    <main>
       {isWelcomePage ? (
         <WelcomePage setIsWelcomePage={setIsWelcomePage} />
       ) : (
         <HomePage setIsWelcomePage={setIsWelcomePage} />
       )}
-    </div>
+    </main>
   );
 }
 

@@ -105,16 +105,12 @@ input:hover {
 
 /* WelcomPage */
 body {
-  background-color: var(--grey-4);
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 body > div {
-  width: 90%;
   height: 593px;
   display: flex;
   justify-content: center;
